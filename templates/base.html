@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}found and lost{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'nav_footer.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    {% block extra-style %}{% endblock %}
+
+</head>
+
+
+    <body>
+        <nav class="navbar">
+            <div>
+                <a href="#">
+                    <img src="{% static 'img/logo.svg' %}" alt="logo" class="logo" width="120px">
+                </a>
+
+            </div>
+            <ul class="navbar_menu">
+                <li><a href="#">서비스 소개</a>
+                    <ul class="submenu">
+                        <li><a href="">두더지 소개</a></li>
+                        <li><a href="">두더지 상징</a></li>
+                        <li><a href="">두더지 BOX</a></li>
+                        <li><a href="">유실물법</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">유실물 보기</a>
+                    <ul class="submenu">
+                        <li><a href="">분실물 보기</a></li>
+                        <li><a href="">습득물 보기</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">유실물 등록</a>
+                    <ul class="submenu">
+                        <li><a href="">분실물 등록</a></li>
+                        <li><a href="">습득물 등록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">고객센터</a>
+                    <ul class="submenu">
+                        <li><a href="">공지사항</a></li>
+                        <li><a href="">EVENT</a></li>
+                        <li><a href="">FAQ</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">마이페이지</a>
+                    <ul class="submenu">
+                        <li><a href="">회원 정보</a></li>
+                        <li><a href="">이용 내역</a></li>
+                        <li><a href="">결제 내역</a></li>
+                        <li><a href="">기타 내역</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <ul class="navbar_profile">
+                <li>
+                    <div class="welcome">황더지님 환영합니다.</div>
+                </li>
+                <li>
+                    <div><img src="{% static "img/diamond_yellow.png" %}" alt="diamond" width="40px"></div>
+                    <div class="profile_text">
+                        <div class="lv">Lv.&nbsp;</div>
+                        <div class="gold">GOLD</div>
+                    </div>
+                </li>
+
+                </li>
+                <li><button style="border : 0px;"><img src="{% static 'img/point_top.svg' %}" alt="" width="15px"
+                            style="margin-top: 20px;"></button>
+                </li>
+            </ul>
+        </nav>
+        <main>
+             {% block content %}{% endblock %}
+            <div class="box">
+                <div>
+                    <a a href="#"
+                        onclick="window.open(this.href, '_blank', 'width=1000px,height=700px,toolbars=no,scrollbars=no'); return false;">
+                        <img src="{% static 'img/tothegembox.png' %}" alt="" width="120px">
+                    </a>
+                </div>
+                <div class="usebox">두더지 BOX 이용하기</div>
+
+            </div>
+
+
+        </main>
+
+        <footer id="footer">
+            <div id="footer_top">
+                <div id="footer1">
+                    <a href="#"><p>LOST112 바로가기</p></a>
+                </div>
+                <div id="footer2">
+                        <div id="phone">
+                            <img src="{% static 'img/027-whatsapp.svg' %}"> <p>Phone</p>
+                        </div>
+                        <div id="Email">
+                            <img src="{% static 'img/043-email.svg' %}">  <p>Email</p>
+                        </div>
+                        <div id="Adress">
+                            <img src="{% static 'img/006-pin.svg' %}">  <p>Adress </p>
+                        </div>
+
+                </div>
+
+            <div id="footer_bottom">
+                    <a href="#"><img src="{% static 'img/013-facebook.svg' %}"></a>
+                    <a href="#"><img src="{% static 'img/014-instagram.svg' %}"></a>
+                    <a href="#"><img src="{% static 'img/018-youtube.svg' %}"></a>
+            </div>
+            </div>
+        </footer>
+        {% block extra-script %}{% endblock %}
+    </body>
+
+</html>

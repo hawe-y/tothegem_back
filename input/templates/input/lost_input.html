@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block title %}lost_input.html{% endblock %}
+
+{% block extra-style %}
+<link rel="stylesheet" href="{% static 'inputpage.css' %}">
+{% endblock %}
+
+{% block content %}
+
+            <div class="sidebar">
+                <ul>
+                    <div class="whole"><a href="">유실물 등록</a></div>
+                    <hr color="#72573C ">
+                    <li class="sidebarSub"><a href="">분실물 등록</a></li>
+                    <hr color="#72573C ">
+                    <li class="sidebarSub"><a href="">습득물 등록</a></li>
+
+                </ul>
+            </div>
+            <div class="contents">
+                <div class="contents_box1">
+                    <div>
+                        <p class="contents_title">분실물 등록</p>
+                        <hr align="center" color="white" size="2">
+                        <p class="contents_subtitle">분실물 등록 페이지에서 잃어버린 분실물을 등록하세요</p>
+                    </div>
+                </div>
+                <div class="contents_input">
+                    <div class="contents_text">
+                        <p>분실물 등록하기</p>
+                    </div>
+                    <div class="inputbox">
+                        <form action="." enctype="multipart/form-data" method="post">{% csrf_token %}
+                        <div class="section1">
+                            <div class="inputbox_inner">
+
+                                <form class="firstform">
+                                    <div>
+                                        <label for="sort">분류</label>
+                                        {{ form.category }}
+                                    </div>
+                                    <div>
+                                        <label for="">물품명</label>
+                                        {{ form.name }}
+                                    </div>
+                                    <div>
+                                        <label>분실위치</label>
+                                       {{ form.location }}
+                                    </div>
+                                    <div>
+                                        <label>분실날짜</label>
+                                        {{ form.date|add_class:'input_date' }}
+                                    </div>
+                                    <div>
+                                        <label>사례금</label>
+                                        {{ form.money }}
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="vertical_line"></div>
+                            <div class="inputbox_inner">
+
+                                <form class="secondform">
+                                    <div>
+                                        <label>물품사진</label>
+                                        <div class="imagebox" style="flex-direction: column;">
+                                            <div class="image_subj">
+                                                {{ form.image|add_class:"image_bt" }}
+                                                <p class="smalltext">{{ form.image.help_text }}</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>별도 연락처</label>
+                                        <div class="phoneNum">
+                                            {{ form.contact|add_class:"phoneNum_input" }}
+                                            <div class="check">
+                                                <input type="checkbox" class="checkbox" name="checkbox" id="checkbox">
+                                                <label for="checkbox" style="font-size:small; color:aqua">*안심번호 사용</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>상세설명</label>
+                                        {{ form.description }}
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                        <div class="submit">
+
+                                <input type="submit" class="section2" value="등록">
+
+
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+ {% endblock %}
+
+
+
+

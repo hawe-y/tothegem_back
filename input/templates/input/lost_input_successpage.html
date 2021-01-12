@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}lost_input_successpage.html{% endblock %}
+
+{% block extra-style %}
+<link rel="stylesheet" href="{% static 'input_successpage.css' %}">
+{% endblock %}
+
+{% block content %}
+
+            <div class="sidebar">
+                <ul>
+                    <div class="whole"><a href="">유실물 등록</a></div>
+                    <hr color="#72573C ">
+                    <li class="sidebarSub"><a href="">분실물 등록</a></li>
+                    <hr color="#72573C ">
+                    <li class="sidebarSub"><a href="">습득물 등록</a></li>
+
+                </ul>
+            </div>
+            <div class="contents">
+                <div class="contents_box1">
+                    <div>
+                        <p class="contents_title">분실물 등록</p>
+                        <hr align="center" color="white" size="2">
+                        <p class="contents_subtitle">분실물 등록 페이지에서 잃어버린 분실물을 등록하세요</p>
+                    </div>
+                </div>
+                <div class="contents_box2">
+                    <div class="success_text">분실물이 성공적으로 등록되었습니다.</div>
+                </div>
+
+            </div>
+
+{% endblock %}
